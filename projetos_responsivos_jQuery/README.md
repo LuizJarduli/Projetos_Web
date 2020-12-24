@@ -5,7 +5,7 @@
 ### Projetos adicionados:
 
 Nome | Descrição
-:----: | :---------
+:---- | :---------
 Ajax - Introdução | Uma introdução básica de como usar operações assíncronas usando ajax com jQuery e php.
 Athletics | Projeto desenvolvido para calcular IMC e Metabolismo Basal.
 AtividadesJquery | Algumas atividades avaliativas realizadas em sala de aula.
