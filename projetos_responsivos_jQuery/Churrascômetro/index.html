@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<title>
-	Churrascômetro
-</title>
+    <title>
+        Churrascômetro
+    </title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -14,110 +15,116 @@
     <link href="css/homeDefault.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"> </script>
+    <script src="js/bootstrap.js">
+    </script>
     <script type="text/javascript">
-      	$(document).ready(function(){
-      		$('#resultado').hide();
-      		$('#calcular').click(function(){
-      			$('#formu').hide();
-      			$('#resultado').show();
+        $(document).ready(function() {
+            $('#resultado').hide();
+            $('#calcular').click(function() {
+                $('#formu').hide();
+                $('#resultado').show();
 
-      			var qtdem = $('#qtdem').val();
-      			var qtdeh = $('#qtdeh').val();
+                var qtdem = $('#qtdem').val();
+                var qtdeh = $('#qtdeh').val();
 
-      			var carne = (qtdeh * 0.32) + (qtdem * 0.3);
-      			var linguica = (qtdeh * 0.25) + (qtdem * 0.2);
-      			var cerveja = (qtdeh * 8) + (qtdem * 4);
-      			var refri = (qtdeh * 0.3) + (qtdem * 0.5);
-      			var pao = (qtdeh * 2) + (qtdem * 1.5);
-      			var carvao = (qtdeh * 0.4) + (qtdem * 0.4);
-      			var sal = (1 + carne / 30);
+                var carne = (qtdeh * 0.32) + (qtdem * 0.3);
+                var linguica = (qtdeh * 0.25) + (qtdem * 0.2);
+                var cerveja = (qtdeh * 8) + (qtdem * 4);
+                var refri = (qtdeh * 0.3) + (qtdem * 0.5);
+                var pao = (qtdeh * 2) + (qtdem * 1.5);
+                var carvao = (qtdeh * 0.4) + (qtdem * 0.4);
+                var sal = (1 + carne / 30);
 
-      			$('#carne').text(carne.toFixed(1));
-      			$('#linguica').text(linguica.toFixed(1));
-      			$('#cerveja').text(cerveja);
-      			$('#refri').text(Math.ceil(refri)); // Math.ceil() é usado para arredondamentos para cima
-      			$('#pao').text(Math.ceil(pao));
-      			$('#carvao').text(Math.ceil(carvao)); // Math.round() é uma função javascript usada para arredondar para cima
-      			$('#sal').text(Math.round(sal));
-      		})
-      	});
+                $('#carne').text(carne.toFixed(1));
+                $('#linguica').text(linguica.toFixed(1));
+                $('#cerveja').text(cerveja);
+                $('#refri').text(Math.ceil(refri)); // Math.ceil() é usado para arredondamentos para cima
+                $('#pao').text(Math.ceil(pao));
+                $('#carvao').text(Math.ceil(carvao)); // Math.round() é uma função javascript usada para arredondar para cima
+                $('#sal').text(Math.round(sal));
+            })
+        });
     </script>
 </head>
-<body style="background: #CC99FF;">          
-<nav class="navbar navbar-default navbar-fixed-top">
-<div class="container-fluid">
-<ul class="nav navbar-nav">
-  <li class="logo"><a href="index.html" style="color: #330066 !important;font-size: 32px;margin-top: 7px; margin-left: 7px;"><img src="img/logo.png">Churrascômetro</a></li>
-</ul>
-</div><!-- /.container-fluid -->
-</nav>
-<div id="master">
-<!--wrapper-->
-<div class="jumbotron" style="background-color:#330066; border-radius:17px;overflow:hidden;">
-<div id="formu">
-<form action="" class="formulario" method="post">
-   <h3 style="margin-left:10px; color: #FFF;">Informe as quantidades</h3>
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1"><img src="img/masc.png"></span>
-      <input type="text" class="form-control" id="qtdeh" aria-describedby="basic-addon1" placeholder="Quantidade de Homens">
-    </div><br>
-     <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1"><img src="img/fem.png"></span>
-      <input type="text" class="form-control" id="qtdem" aria-describedby="basic-addon1" placeholder="Quantidade de Mulheres">
-    </div>
-    <br><br>
-    <input type="button" class="btn btn-primary" value="Calcular" id="calcular">
-</form>
-</div>
-<div id="resultado">
-<div class="row">
-<div class="col-md-6">
-<div class="panel panel-default" style="margin-left:1%;width:97.5%;">
-<div class="panel-heading" style="background:#CC99FF !important;border-color: #330066 !important;">
-<h3 class="panel-title" style="color:#FFF !important;">Lista de Compras</h3>
-</div>
 
-<div class="panel-body">
-<ul class="list-group">
-  <li class="list-group-item"><img src="img/icone_churras/carne.png"> Carne: <span id="carne"></span> kg</li>
-  <li class="list-group-item"><img src="img/icone_churras/linguica.png"> Linguiça: <span id="linguica"></span> kg</li>
-  <li class="list-group-item"><img src="img/icone_churras/cerveja.png"> Cerveja: <span id="cerveja"></span> latas</li>
-  <li class="list-group-item"><img src="img/icone_churras/refri.png"> Refrigerante: <span id="refri"></span> litro(s)</li>
-  <li class="list-group-item"><img src="img/icone_churras/pao.png"> Pães: <span id="pao"></span> unidade(s)</li>
-  <li class="list-group-item"><img src="img/icone_churras/carvao.png"> Carvão: <span id="carvao"></span> kg</li>
-  <li class="list-group-item"><img src="img/icone_churras/sal.png"> Sal Grosso: <span id="sal"></span> saco(s)</li>
-  
-</ul>
-</div>
-</div>
-</div>
-    </div>  
-        <div class="col-md-6" >
-        <div class="panel panel-default" style="margin-left:1%;width:97.5%;height:462px;">
-        <div class="panel-heading" style="background:#CC99FF;border-color: #330066;">
-        	<h3 class="panel-title" style="color: #FFF;">Sugestão de playlist</h3>
-      	</div>
-      	<div class="panel-body" style="margin-left:3px;">
-         	<iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DXavtmWzC1MpQ" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-	    </div>
-	    </div>
-	    </div>  
-    <div>
-    
+<body style="background: #CC99FF;">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="logo">
+                    <a href="index.html" style="color: #330066 !important;font-size: 32px;margin-top: 7px; margin-left: 7px;"><img src="img/logo.png">Churrascômetro</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id="master">
+        <!--wrapper-->
+        <div class="jumbotron" style="background-color:#330066; border-radius:17px;overflow:hidden;">
+            <div id="formu">
+                <form action="" class="formulario" method="post">
+                    <h3 style="margin-left:10px; color: #FFF;">Informe as quantidades</h3>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><img src="img/masc.png"></span>
+                        <input type="text" class="form-control" id="qtdeh" aria-describedby="basic-addon1" placeholder="Quantidade de Homens">
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><img src="img/fem.png"></span>
+                        <input type="text" class="form-control" id="qtdem" aria-describedby="basic-addon1" placeholder="Quantidade de Mulheres">
+                    </div>
+                    <br><br>
+                    <input type="button" class="btn btn-primary" value="Calcular" id="calcular">
+                </form>
+            </div>
+            <div id="resultado">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default" style="margin-left:1%;width:97.5%;">
+                            <div class="panel-heading" style="background:#CC99FF !important;border-color: #330066 !important;">
+                                <h3 class="panel-title" style="color:#FFF !important;">Lista de Compras</h3>
+                            </div>
 
-</div>
-      
-</div>                          
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><img src="img/icone_churras/carne.png"> Carne: <span id="carne"></span> kg</li>
+                                    <li class="list-group-item"><img src="img/icone_churras/linguica.png"> Linguiça: <span id="linguica"></span> kg</li>
+                                    <li class="list-group-item"><img src="img/icone_churras/cerveja.png"> Cerveja: <span id="cerveja"></span> latas</li>
+                                    <li class="list-group-item"><img src="img/icone_churras/refri.png"> Refrigerante: <span id="refri"></span> litro(s)</li>
+                                    <li class="list-group-item"><img src="img/icone_churras/pao.png"> Pães: <span id="pao"></span> unidade(s)</li>
+                                    <li class="list-group-item"><img src="img/icone_churras/carvao.png"> Carvão: <span id="carvao"></span> kg</li>
+                                    <li class="list-group-item"><img src="img/icone_churras/sal.png"> Sal Grosso: <span id="sal"></span> saco(s)</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default" style="margin-left:1%;width:97.5%;height:462px;">
+                        <div class="panel-heading" style="background:#CC99FF;border-color: #330066;">
+                            <h3 class="panel-title" style="color: #FFF;">Sugestão de playlist</h3>
+                        </div>
+                        <div class="panel-body" style="margin-left:3px;">
+                            <iframe src="https://open.spotify.com/embed/playlist/3yIl5GQARaVksoI2ClCtCx" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+
+                </div>
+
+            </div>
+        </div>
     </div>
-</div>
-        
+
     <!--End wrapper-->
-   
-<div id="footer">
-    
-</div>
-</div>
+
+    <div id="footer">
+
+    </div>
+    </div>
 
 </body>
+
 </html>
