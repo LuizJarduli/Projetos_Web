@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulário</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<form action="acao.php" method="POST"><!--o Action  indica a página aonde enviará os dados do formulário, no caso uma página da web , Method: POST , método de usuário onde o usuário não vê a passagem de valores -->
+	<label>Digite seu nome: </label><!--label: rótulos em html para textos simples indicando qual valor a ser inserido-->
+	<input type="text" name = "nome"/><!--input: são controles de entrada, o "type"  indica o tipo de entrada a ser inserido na input , name: é o atributo que identifica os controles(componentes) do input -->
+	<br/><br/>
+	<label>Digite sua idade: </label>
+	<input type="text" name = "idade"/>
+	<br/><br/>
+	<label>Digite sua senha: </label>
+	<input type="password" name = "senha"/>
+	<br/><br/>
+	<label>Selecione sua preferência: </label></br>
+	<input type="checkbox" name = "esporte"/>esporte &nbsp;&nbsp;
+	<input type="checkbox" name = "Lazer"/>Lazer
+	<br/><br/>
+	<label>Selecione seu estado civil: </label></br>
+	<input type="radio" name = "estadocivil" value="Solteiro" />Solteiro &nbsp;&nbsp;
+	<input type="radio" name = "estadocivil" value="Casado" />Casado
+	<br/><br/>
+	<input type="submit" value="Enviar"/><!---->
+</form>
+
+</body>
+</html>

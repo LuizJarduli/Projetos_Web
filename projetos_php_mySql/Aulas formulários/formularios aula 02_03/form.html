@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulário</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<form action="acao.php" method="POST"><!--o Action  indica a página aonde enviará os dados do formulário, no caso uma página da web , Method: POST , método de envio de informações onde o usuário não vê a passagem de valores -->
+	<label>Digite seu nome: </label><!--label: rótulos em html para textos simples indicando qual valor a ser inserido-->
+	<input type="text" name = "nome" required/><!--input: são controles de entrada, o "type"  indica o tipo de entrada a ser inserido na input , name: é o atributo que identifica os controles(componentes) do input, required é  um atributo que torna algum campo de entrada de dados obrigatório -->
+	<br/><br/>
+	<label>Digite sua idade: </label>
+	<input type="text" name = "idade" autofocus /><!--autofocus é usado para dar preferência aonde vai se posicionar primeiro o cursor de digitação-->
+	<br/><br/>
+	<label>Digite sua senha: </label>
+	<input type="password" name = "senha"/>
+	<br/><br/>
+	<label>Selecione sua preferência: </label></br>
+	<input type="checkbox" name = "esporte"/>esporte &nbsp;&nbsp;
+	<input type="checkbox" name = "Lazer"/>Lazer
+	<br/><br/>
+	<label>Selecione seu estado civil: </label></br>
+	<input type="radio" name = "estadocivil" value="Solteiro" />Solteiro &nbsp;&nbsp;
+	<input type="radio" name = "estadocivil" value="Casado" />Casado
+	<br/><br/>
+	<input type="hidden" name="user" value="admin"><!--o type=hidden passa informações invisiveis ao usuário, necessariamente necessita de value-->
+	<label>Selecione seu estado: </label></br>
+	<select name="estados"><!--Select cria a lista suspensa em si, necessita-se de um name-->
+		<option value="SP">São Paulo</option><!--Tag option é a segunda tag do menu suspenso, usado para criar as opções da lista, necessita-se de um value-->
+		<option value="RJ">Rio de Janeiro</option>
+		<option value="MG">Minas Gerais</option>
+		<option value="ES">Espírito Santo</option>		
+	</select>
+	<br/><br/>
+	<label>Mensagem:</label><br/>
+	<textarea name="msg" cols="38" rows="7"></textarea> <!--usado para criar caixa de mensagens para registrar textos mais longos, o textarea é um dado input mas não faz parte da família, cols é um atributo usado para definir um número de colunas para o objeto, já o rows é usado para definir uma quantidade de linhas-->
+	<br>
+	<input type="submit" value="Enviar"/><!--input type : submit é usado para enviar os dados do formulário para o local especificado com o método especificado-->
+</form>
+
+</body>
+</html>
