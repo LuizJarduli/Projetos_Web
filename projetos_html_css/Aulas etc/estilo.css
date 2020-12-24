@@ -1,0 +1,106 @@
+body{
+	/*background-color: #C60;
+	background-image: url(deserto.jpg);- define a imagem de fundo
+	background-repeat: no-repeat;- define se o fundo se repete ou não
+	background-attachment: fixed;- define se o fundo "role" com a pagina
+	background-position: center;- posição do fundo em relação a tela */
+	background: #39f url(wind.png) repeat center;/*modo compilado, ou seja, resume todos os atributos de background em uma linha apenas*/
+}
+p{
+	color: #cfc;
+	/*font-style: italic;- estilo da fonte, italico,etc..
+	font-weight: bold;- define se será negrito ou nao
+	font-size: 20px;- tamanho daq fonte
+	font-family: arial, verdana, sans-serif; - define qual fonte o html usara */
+	font: italic bold 40px 'Press Start 2P';/*modo compilado do atributo font*/
+	text-indent: 50px;/* indentação do texto*/
+	text-align: justify;/*define  o alinhamento do texto, center, right, left,etc*/
+	text-decoration: underline;/*decoração do texto, sublinhado,riscado,etc*/
+	letter-spacing: 0px;/*define espaçamento entre letras*/
+	text-transform: capitalize;/* define o case do texto, maiuscula ou minuscula, ou a primeira letra apenas maiuscula*/
+	/*Por conta do Letter-spacing, não há modo compilado da propriedade TEXT*/
+}
+h1{
+	background-color: #F00;
+	margin-top: 100px;
+	margin-right: 100px;
+	margin-bottom: 30px;
+	margin-left: 150px;
+}
+a{
+	text-decoration: none;
+}
+a:link{/*para formatar o evento causado pelo usuário de entrar pela primeira vez no link(endereço href)*/
+
+	color: #069;
+}	
+a:visited{/*para formatar o evento causaudo pelo usuário de ja ter visitado o link(endereço href)*/
+
+	color: #660;
+}
+a:active{/*para formatar a pseudo-classe do ato de segurar o mouse sobre o link */
+
+	background: #060;
+	color: #ff0;
+}
+a:hover{/*para formatar a pseudo-classe do ato de passar o mouse sobre o link*/
+
+	background: #006;
+	color: #3f0;
+	font-size: 50px;
+	font-style: italic;
+	border-radius: 40px;
+}
+/*#fora{
+	width: 400px;
+	height: 400px;
+	background: #600;
+
+}
+#dentro{
+	width: 200px;
+	height: 200px;
+	background: #006;
+	margin: 100px;
+	position: absolute;/*começa a contar apartir do elemento "pai" em que se encontra no código*/
+	/*position: relative;==> começa a contar apartir de onde começa o "div" independente do elemento pai onde se encontra}*/
+	
+#item1{
+	width: 400px;
+	height: 400px;
+	background: #600;
+	float: left;
+	border-style: solid;
+	border-width: 20px;
+	
+
+}
+#item2{
+    width: 400px;
+	height: 400px;
+	background: #006;
+	/*position: absolute;
+	margin-left: 600px;
+	margin-top: -400px;*/
+	margin-left: 600px;
+	border-style: solid;
+	border-width: 20px;
+}
+#item3{
+	width: 400px;
+	height: 400px;
+	background: #0f0;
+	position: absolute;
+	border-style: solid;
+	border-width: 20px;
+}
+#item4{
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	margin-left: 600px;
+	border-style: solid;
+	border-width: 20px;
+	background: #ff0;
+
+}

@@ -1,0 +1,73 @@
+*{
+	margin: 0;
+	padding: 0;
+
+}
+body{
+	/*background: #333;*/
+	background-image: linear-gradient(to left, #fff, #333, #000);
+
+}
+#box{
+	width: 860px;
+	background: #fff;
+	margin: 0 auto;
+}
+#header{
+	height: 150px;
+
+}
+#logo{
+	background: #c30;
+	width: 300px;
+	height: 100px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+#nav{
+	height: 30px;
+	background: #ccc;
+	border-top: 1px solid #999;
+}
+#nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	width: 100%;
+}
+#nav ul li{
+	float: left;
+	display: inline;/*display==> como o elemento é mostrado  na tela*/
+}
+#nav ul li a{
+	font: bold 13px "Trebuchet MS",Arial, sans-serif;
+	color: #333;
+	float: left;
+	text-decoration: none;
+	padding: 6px 20px;
+	display: block;/*ele torna cada elemento A independente*/
+	border-right: 1px solid #999;
+}
+#nav ul li a:hover, #nav ul li a.ativo{
+	background: #900;
+	color: #fff;
+
+}
+#conteudo{
+	height: 523px;
+	background: #fff;
+}
+#conteudo h1{
+	font: 15px "Trebuchet MS",Arial, sans-serif;
+	color: #666;
+	text-align: center;
+	margin-top: 50px;
+
+}
+#footer{
+	/*background: #03f;*/
+	background-image: linear-gradient(to left, #fff, #00bfff, #03f);
+	height: 40px;
+}

@@ -1,0 +1,114 @@
+body{
+    background-color: #696;/*cor de fundo do elemento body*/
+    background-position: top center;/*posição do fundo do elemento body, no caso aqui esta centrado*/
+    background-image: url(background1.jpg);/*imagem de fundo do elemento body, deve-se mostrar o caminho da imagem via url*/
+
+}
+#header{ /*id(identificador) do meu cabeçalho,onde vai a logo*/
+    width:1080px;/*largura do meu cabeçalho, usei a medida em pixels(px)*/
+    height: 169px;/*altura do meu cabeçalho, tambem em pixels*/
+    margin: 0px auto;/*adiciona margem ao elemento header(cabeçalho)*/
+    background-image: url(logo2.png);/*imagem de fundo do meu cabeçalho, indicada com sua devida url*/
+}
+#menu{/* id(identificador) do meu menu, onde vai as listas(abas)de conteudo*/
+    width: 1080px;/*define a largura do meu menu*/
+    height: 51px;/*define a altura do meu menu*/
+    background-color: #060;/*aplica cor de fundo do id menu(meu menu)*/
+    margin: 0px auto;/*adiciona margem ao menu*/
+    padding-top: 5px;/*paddind é o contrário do margin, ao invés de criar margem externa ele cria internamente*/
+}
+#content{/*identificador id para estilizar meu conteudo*/
+    width: 1080px;/*largura do meu box de conteudo*/
+    height: 464px;/*altura do meu box de conteudo*/
+    background-color: #ccc;/*cor de fundo do id content(conteudo)*/
+    margin: 0px auto;/*aplicando margem ao conteudo*/
+    padding-top: 6px;/*aplicando margem interna ao conteudo*/
+    background-image: url(backgroundcontent.jpg);/*aplicando uma imagem de fundo no box de conteudo*/
+    overflow: auto;/*aplica barras de rolagem ao box #content para que possa visualizar todo o tamanho do conteudo caso seja maior que a altura e largura pre estabelecida sem ultrapassá-la*/
+}
+#footer{/*identificador id para estilizar meu rodapé*/
+    width:1080px;/*aplica largura ao meu rodapé*/
+    height: 84px;/*aplica altura ao meu rodapé*/
+    background-color: #666666;/*aplica uma cor de fundo ao meu rodapé*/
+    background-position: bottom;/*define a posição do meu #footer em relação aos outros boxes, no caso o bottom seria a parte inferior*/
+    margin: 0px auto;/*aplicando margem externa ao meu rodapé*/
+    padding-top: 15px;/*aplicando margem interna ao meu rodapé*/    
+}
+.palavra{/*identificador class usado para estilizar conjuntos elementos separadamente*/
+    font-weight: bold;/*define se a fonte será normal, negrito,etc.*/
+    font-size: 32px;/*define o tamanho da fonte, no caso tambem usei como medida os pixels(px)*/
+    color: #00f;/*define a cor da fonte*/
+    text-decoration: underline;/*define se a decoração da fonte como grifado, sublinhado, riscado,etc. */
+    text-transform: capitalize;/*define o case da fonte, se será todas letras maiúsculas, minúsculas ou apenas as Primeiras letras de cada palavra em maiúscula*/    
+}
+.paragrafo1{/*identificador class*/
+    font-weight: bolder;/*defininindo a fonte como negrito*/
+    font-size: 20px;/*tamanho da fonte*/
+    font-family: arial;/*define a familia de fontes a serem utilizadas*/
+    padding-left: 10px;/*margem interna à esquerda*/
+}
+.titulo1{/*identificador class*/
+    text-decoration: underline;/*decoração do texto, no caso utilizei o sublinhado*/
+}
+.titulo2{/*identificador class*/
+    color: #003;/* cor da fonte*/
+    font-weight: bold;/*definindo a fonte como negrito*/
+    font-size: 22px;/*tamanho da fonte*/
+    text-align: center;/*define o alinhamento do texto, no caso utilizei o alinhamento centralizado*/
+}
+.titulo3{/*identificador class*/
+    color: #000;/*cor da fonte*/
+    font-weight: bold;/*definindo a fonte como negrito*/
+    font-size: 30px;/*tamanho da fonte*/
+    text-align: center;/*alinhamento de texto, no caso utilizei o centralizar*/
+    text-decoration: underline;/*decoração do texto: sublinhado*/
+}
+.tituloLocalização{/*identificador class*/
+    font-size: 26px;/*tamanho da fonte*/
+    font-family: Arial, verdana;/*familia de fonte utilizadas: arial, verdana*/
+    text-align: center;/*alinhamento de texto, novamenente usei o centralizado*/
+    text-decoration: underline;/*decoração de texto: sublinhado*/
+}
+ul{ /*tag usada para definir estilo para listas*/
+    list-style: none;/*define o estilo do indice da lista como quadrado, bolinha,circulo,etc*/
+    font-size: 20px;/*define o tamanho da fonte utilizada nas listas*/
+    text-align: center;/*define alinhamento do texto, no caso utilizei texto centralizado*/
+    word-spacing: 30px;/*define o espaçamento entre as palavras*/
+    font-weight: bold;/*define se a fonte será negrito ou normal*/
+}
+h1{/* tag para estilizar titulos de primeiro nivel*/
+    color: #004;/*cor da fonte*/
+    font-size: 26px;/*tamanho da fonte*/
+    font-family: Arial, verdana;/*familia de fonte a serem utilizadas pelo browser: arial, verdana*/
+    text-align: center;/*alinhamento de texto: centralizado*/
+}
+li{/*define o estilo das linhas de cada lista*/
+    display: inline;/*posiciona as listas em linha horizontal*/
+}
+a{/*define estilo para anchor(âncora) text*/
+    text-decoration: none;/*decoração do texto, neste caso não usei nenhum*/
+    color: #fff;/*cor da fonte*/
+}
+h2{/*define estilo para titulos de segundo nivel*/
+    font-size: 12px;/*tamanho da fonte*/
+    font-family: arial, verdana, sans-serif;/*familia da fonte, no caso usei arial e verdana sans-serif(não serifadas)*/
+    text-align: center;/*alinhamento de texto centralizado*/
+}
+img{/*define o estilo para a tag img*/
+    padding-right: 10px;/*aplica espaçamento interno apenas ao lado direito do box*/
+}
+iframe{/*define estilo para a tag iframe*/
+    padding-left: 40px;/*aplica espaçamento interno apenas para o lado esquerdo do box*/
+}
+p{/*define o estilo da tag p(parágrafo)*/
+    color: #003;/*cor da fonte*/
+    font-weight: bold;/*define a fonte como negrito*/
+    font-size: 15px;/*tamanho da fonte*/
+    font-family: Arial;/*familia de fonte a serem utilizados no browser, no caso utilizei arial*/
+    text-align: center;/*alinhamento de texto centralizado*/
+    line-height: 35px;/*define espaçamento entre linhas*/
+    padding-left: 10px;/*define margem interna à esquerda*/
+}
+ 
+ 
+    

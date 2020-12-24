@@ -1,0 +1,112 @@
+body{
+	/*background-color: #C60;
+	background-image: url(deserto.jpg);- define a imagem de fundo
+	background-repeat: no-repeat;- define se o fundo se repete ou não
+	background-attachment: fixed;- define se o fundo "role" com a pagina
+	background-position: center;- posição do fundo em relação a tela */
+	background: #39f url(wind.png) repeat center;/*modo compilado, ou seja, resume todos os atributos de background em uma linha apenas*/
+}
+p{
+	color: #cfc;
+	/*font-style: italic;- estilo da fonte, italico,etc..
+	font-weight: bold;- define se será negrito ou nao
+	font-size: 20px;- tamanho daq fonte
+	font-family: arial, verdana, sans-serif; - define qual fonte o html usara */
+	font: italic bold 40px 'Press Start 2P';/*modo compilado do atributo font*/
+	text-indent: 50px;/* indentação do texto*/
+	text-align: justify;/*define  o alinhamento do texto, center, right, left,etc*/
+	text-decoration: underline;/*decoração do texto, sublinhado,riscado,etc*/
+	letter-spacing: 0px;/*define espaçamento entre letras*/
+	text-transform: capitalize;/* define o case do texto, maiuscula ou minuscula, ou a primeira letra apenas maiuscula*/
+	/*Por conta do Letter-spacing, não há modo compilado da propriedade TEXT*/
+
+}
+h1{ /*Propriedades da box*/                 
+	background-color: #F00;
+	/*margin-top: 100px;
+	margin-right: 100px;
+	margin-bottom: 30px;
+	margin-left: 150px;*/
+	margin: 100px 100px 30px 150px;/*Modo do compilado da propriedade margin,observe que e ordem é o sentido horário(top,right,bottom,left)*/
+	
+	/*border-width: 10px;
+	border-style: dashed;
+	border-color: #666;
+	border-radius: 10px;*/
+	border: 10px dashed #666;/*Modo compilado da propriedade Border(a ordem é width style e color*/
+	border-radius: 30px; 
+	/*padding-top: 100px;
+	padding-right: 50px;
+	padding-bottom: 100px;
+	padding-left: 50px;*/
+	padding: 100px 50px 100px 50px;/*Modo compilado do padding com 4 valores( se for com 1 valor este será para todas as direções, se for com dois, o primeiro será para a vertical o segundo será para horizontal*/
+
+}
+/*definindo estilo para listas*/
+ul{
+   list-style: none;
+}	
+	.lager{/*formata-se class com "." */
+		color: #fff;
+		font: Arial;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: capitalize;
+	}
+
+	.ale{
+		color: #0ff;
+		text-transform: capitalize;
+	}
+	#lager{/*formata-se id com "#" */
+		color: #300;
+		background-color: #ddd;
+	}
+	#ale{
+		color: #600;
+		background-color: #fff;
+	}
+.palavra{
+	color: #f0f;
+}
+#boi{
+	color: #ff0;
+	font: arial;
+	font-size: 30px;
+}
+#porco{
+	color: #ff0;
+	font: arial;
+	font-size: 30px;
+}
+#boi ul li, #porco ul li{
+	font-weight: bold;
+}
+#boi,#porco{
+	width: 200px;
+	height: 200px;
+	float: left;
+}
+
+/*PseudoClasses*/
+a:link{/*para formatar o evento causado pelo usuário de entrar pela primeira vez no link(endereço href)*/
+
+	color: #069;
+}	
+a:visited{/*para formatar o evento causaudo pelo usuário de ja ter visitado o link(endereço href)*/
+
+	color: #660;
+}
+a:active{/*para formatar a pseudo-classe do ato de segurar o mouse sobre o link */
+
+	background: #060;
+	color: #ff0;
+}
+a:hover{/*para formatar a pseudo-classe do ato de passar o mouse sobre o link*/
+
+	background: #006;
+	color: #3f0;
+	font-size: 50px;
+	font-style: italic;
+	border-radius: 40px;
+}

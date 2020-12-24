@@ -1,0 +1,233 @@
+*{/*usando o seletor *(asterisco) para formatar todos os elementos*/
+	margin: 0;/*declarando a propriedade margin(margem esterna) como 0 para este elemento*/
+	padding: 0;/*declarando o padding(margem interna ou enchimento) como 0 para este elemento*/
+}
+body{/*formatando o seletor body*/
+	background: linear-gradient(to bottom, #7195a2 0%, #dee5eb 33%, #e4e4e2 66%, #4c6d2d 100%) no-repeat fixed;/*usando o modo compilado da propriedade background, usando primeiramente
+	o linear gradient que serve para misturas paletas de cores, seguindo por no-repeat(se o fundo se repete ou não) e por o ultimo o background-attachment que define se o fundo role ou 
+	não com a página, no caso deixei fixa*/
+
+}
+#box{/*formatando a div 'box' com o identificador id*/
+	width: 1100px;/*definindo largura*/
+	height: 615px;/*definindo altura*/
+	background: url(BackgroundBox1.jpg) no-repeat ;/*colocando imagem de fundo na dic 'box', e definindo que ela não se repita*/
+	margin: 10px auto;/*definindo margem externa */
+	border: 1px solid #666;/*definindo uma borda,sua expessura(em pixels), seu estilo e sua cor*/
+}
+#menu{/*formatando a div 'menu' com o identificador id*/
+	background-color: rgba(255,255,255,0.0);/*definindo cor para o fundo, usando a propriedade rgba() onde coloco os números das cores e o ultimo valor será sua opacidade*/
+	width: 700px;/*definindo largura*/
+	height: 36px;/*definindo altura*/
+	margin-left: 400px;/*definindo margem externa esquerda*/
+
+}
+#menu ul{/*formatando o seletor ul dentro da div menu com identificador id*/
+	float: left;/*flutuando os elementos da ul para a esquerda */
+	list-style: none;/*definindo como 'nenhum' o estilo da lista*/
+	width: 100%;/*defininfo a largura como 100%*/
+	margin: 0;/*zerando a margem externa*/
+	padding: 0;/*zeando a margem(ou enchimento) interna */
+}
+#menu ul li{/*formatando o elemento li que esta em ul que esta dentro da div identificada como menu*/
+	float: left;/*flutuado o elemento li para a esquerda*/
+	font: 18px/36px Impact, Helvetica, sans-serif;/*definindo o tamanho da fonte/espaçamento entre linhas e escolhendo a família de fontes */
+	padding: 0px 10px;/*definindo a margem interna*/
+	position: relative;/*definindo que a posição desse elemento será relativa, ou seja, sua posição começa a contar apartir de onde começa o "div" independente do elemento pai onde se encontra*/
+}
+#menu ul li:hover{/*formatando a pseudoclasse hover(que seria o evento causado pelo usuário de passar o mouse sobre um link ou elemento) do elemento li*/
+	background-color: #70ad47;/*cor de fundo do hover*/
+	border: 1px solid #70ad47;/*definindo uma borda para o evento do hover*/
+	border-radius: 3px;/*definindo um arredondamento da borda*/ 
+}
+
+#menu ul li a{/*formatando o elemnento a que esta dentro de li onde se encontra em ul que esta na div 'menu'*/
+	color: #6d6d6d;/*definindo cor para a fonte*/
+	text-decoration: none;/*definindo como 'nenhum' a decoração do texto*/
+	display: block;/*tornando os elementos independentes*/
+	float: left;/*flutuando os elementos para a esquerda*/
+	
+}
+#menu ul li a:hover{/*formatando a pseudoclasse hover do elemento a*/
+	color: #fff;/*definindo uma cor para o evento hover */
+}
+#menu ul li a.active{/*formatando o class .active do elemento a*/
+	border-bottom: 2px solid #069;/*definindo uma borda para o elemento class*/
+}
+#menu ul li:hover ul{/*formatando a lista de segundo nível para o hover de li*/
+	left: 0;/*definindo como zero a propriedade left*/
+}
+#menu ul li ul{/*formatando a lista de segundo nível dentro de li*/
+	left: -999em;/*posicionando o elemento a esquerda em -999 quadratins(ele reaparece-rá em tela quando o evento hover acontecer)*/
+	top: 36px;/*subindo o elemento em pixels*/
+	width: 100px;/*definindo largura*/
+	position: absolute;/*definindo a posição como absoluta, ou seja, sua posição começa a contar apartir do elemento 'pai' onde se encontra o código*/
+	border-top: none;/*definindo borda superior como 'nenhuma'*/
+}
+#header{/*formatando a div 'header'*/
+	background-color: rgba(255,255,255,0.0);/*definindo a cor de fundo  do elemento*/
+	width: 250px;/*definindo a largura*/
+	height: 100px;/*definindo a altura*/
+	float: left;/*flutuando o elemento a esqquerda*/
+}
+#header p{/*formatando o elemento p que esta dentro da div 'header'*/
+	font: 35px "Brush Script MT","Edwardian Script ITC",serif;/*formatando a propriedade fonte, definindo tamanho e família*/
+	text-align: center;/* alinhando o texto para centralizado*/
+	padding-top: 10px;/*definindo margem interna superior*/
+	text-decoration: underline;/*sublinhando o texto*/
+	text-shadow: 0 1px 0 #000;/*definindo sombra para o texto onde o primeiro valor seria para sombra horizontal, o segundo para vertical e o terceiro o blur(borrão) da sombra, o qquarto é sua cor*/
+	color: #70ad47;/*definindo cor para o texto*/
+}
+#header ul{/*formatando o elemento ul dentro da div 'header'*/
+	list-style: none;/*definindo o estilo da lista como 'nenhuma'*/
+	width: 150px;/*definindo largura*/
+	height:40px;/*definindo altura*/
+	background-color: #70ad47;/*definindo cor de fundo*/
+	margin-left: 50px;/*definindo margem externa esquerda*/
+	border: 1px solid #70ad47;/*definindo uma borda*/
+	border-radius: 3px;/*definindo um arredondamento*/
+
+}
+#header ul li{/*formatando o elemento li que esta dentro de ul que por sua vez esta dentro da div 'header'*/
+	font:18px/36px Impact, Helvetica, sans-serif;/*definindo o tamanho/espaçamento entre linhas e a família da fonte*/
+}
+#header ul li a{/*formatando o elemento a dentro da li que esta dentro de ul que esta dentro da div 'header'*/
+	text-align: center;/*alinhando o texto para 'centralizado'*/
+	color: #666;/*definindo cor para o texto*/
+	text-decoration: none;/*definindo decoração do texto como 'nenhuma'*/
+	display: block;/*declarando independentes os elementos */
+}
+#header ul li a:hover{/*formatando a pseudoclasse hover sobre o elemento a*/
+	color: #fff;/*definindo cor para o evento hover*/
+}
+#footer{/*Formatando a div 'footer'*/
+	width: 700px;/*definindo largura*/
+	height: 36px;/*definindo altura*/
+	background-color: #111;/*definindo cor de fundo*/
+	margin-top: 543px;/*definindo margem superior externa*/
+	margin-left: 200px;/*definindo margem esquerda externa*/
+	border-radius: 10px;/*definindo arredondamento*/
+}
+#footer p{/*formatando o elemento p dentro da div 'footer'*/
+	text-align: center;/*definindo o alinhamento do texto como 'centralizado'*/
+	font:13px/36px Impact, Helvetica, sans-serif;/*Definindo tamanho da fonte e sua família*/
+	color: #fff;/*definindo cor da fonte*/
+}
+#content{/*formatando a div 'content'*/
+	background-color: rgba(255,255,255,0.6);/*definindo cor de fundo com rgba*/
+	width: 600px;/*definindo largura*/
+	height: 400px;/*definindo altura*/
+	position: absolute;/*definindo a posição como absoluta, ou seja, sua posição começa a contar apartir do elemento 'pai' onde se encontra o código*/
+	margin: 100px 250px;/*definindo margem externa*/
+	border:1px solid #666;/*definindo borda, sua experssura, estilo e sua cor*/
+	border-radius: 10px;/*definindo seu arredondamento*/
+	overflow: auto;/*overflow impede que o conteudo 'exploda' e saia para fora do limite do box, ele ajusta o conteudo e insere barras de rolagem caso necessário */
+}
+#content h1{/*formatando o elemento h1 que esta dentro da div 'content'*/
+	font: italic 45px "Elephant",serif;/*definindo estilo da fonte, seu tamanho e sua família */
+	text-align: center;/*alinhando o texto como 'centralizado'*/
+	color: #6d6d6d;/*definindo cor para a fonte*/
+	margin-top: 8px;/*definindo margem superior externa*/ 
+}
+#content h2{/*formatando o elemento h2 que esta dentro da div 'content'*/
+	font: italic 35px "Elephant",serif;/*definindo estilo da fonte, seu tamanho e sua família*/
+	text-align: center;/*centralizando o texto*/
+	color: #6d6d6d;/*definindo cor da fonte*/
+}
+#content img{/*formatando o elemento img dentro da div 'content'*/
+	border-radius: 5px;/*definindo arredondamento nas bordas*/
+}
+#content p .span1{/*formatando o class que esta no elemento p que esta dentro da div 'content'*/
+	font: italic 30px "Elephant",sans-serif;/*definindo o estilo da fonte como italico, seu tamanho e sua família de fontes*/
+	text-align: center;/*centralizando o texto*/
+	color: #3f3f3f;/*definindo a cor da fonte*/
+	margin-top: 20px;/*definindo um tamanho para a margem superior externa*/
+	display: block;/*declarando este elemento como independente de seu elemento pai*/
+}
+#content ul{/*formatando o elemento ul que esta dentro da div  'content'*/
+	list-style: none;/*definindo o estilo da lista como 'nenhuma'*/
+	width: 450px;/*definindo largura*/
+	height: 100px;/*definindo a altura*/
+	background-color: #70ad47;/*definindo uma cor de fundo para a ul*/
+	border-radius: 5px;/*definindo um arredondamento das bordas*/
+	margin-left: 75px;/*definindo uma margem esquerda externa*/
+	margin-top: 40px;/*definindo uma margem superior externa*/
+}
+#content ul li{/*formatando o elemento li que esta dentro de ul que por sua vez se encontra na div 'content'*/
+	font: 25px/100px Impact, Helvetica, sans-serif;/*definindo um tamanho para fonte/um espaçamento entre linhas e sua família de fontes*/
+}
+#content ul li a{/*formatando o elemento a que esta dentro de li*/
+	color: #666;/*definindo uma cor para a fonte*/
+	text-decoration: none;/*definindo como 'nenhum' a decoração do texto*/
+	text-align: center;/*centralizando o texto*/
+	display: block;/*declarando independente o elemento a em relação ao seu elemento pai*/
+}
+#content ul li a:hover{/*formatando a pseudoclasse hover que ocorre no elemento a*/
+	color: #fff;/*definindo uma cor para o evento hover do elemento a*/
+}
+#content p{/*formatando o elemento p dentro da div 'content'*/
+	font: 18px/36px Impact, Helvetica, sans-serif;/*definindo um tamanho para a fonte e suas famílias*/
+	display: block;/*declarando como independente o elemento p*/
+	text-align: center;/*centralizando o texto*/
+}
+#content #span1 ul{/*formatando o elemento ul que esta dentro de span(identificado com id 'span1') que por sua vez esta dentro da div 'content'*/
+	float: left;/*flutuando o elemento à esquerda */
+	list-style: none;/*definindo como 'nenhuma' o estilo da lista*/
+	width: 430px;/*definindo a largura do elemento*/
+	height: 210px;/*definindo a altua do elemento*/
+	background-color: rgba(255,255,255,0.0);/*definindo uma cor de fundo para o elemnto usando o rgba(usasse os valores das cores e um ultimo valor para opacidade)*/
+}
+#content #span1 ul li{/*formatando o elemento li que esta dentro de ul que esta dentro do span(id='span1') que esta dentro da div 'content'*/
+	float: left;/*flutuando o elemnto à esquerda*/
+	margin-right: 5px;/*definindo uma margem direita externa para o elemento*/
+
+}
+#content #span1 ul li:hover{/*formatando a pseudoclasse hover sobre o elemento li*/
+	background-color: #70ad47;/*definindo uma cor de fundo para o evento*/
+	border-radius: 10px;/*arredondando suas bordas*/
+}
+#content2{/*formatando a div id='content2'*/
+	background-color: rgba(255,255,255,0.7);/*definindo uma cor de fundo usando a propriedade rgba*/
+	width: 800px;/*definindo uma largura para o elemento*/
+	height: 450px;/*definindo a altura do elemento*/
+	border: 1px solid #666;/*definindo uma borda para o elemento onde declara-se sua espessura, seu estilo e sua cor*/
+	border-radius: 10px;/*arredondando as bordas com a propriedade border-radius*/
+	margin: 68px 143px;/*definindo medidas horizontais e verticais de margem externa*/
+	padding: 7px;/*definindo uma margem interna(ou enchimento)*/
+	position: absolute;/*definindo a posição do elemento como absoluta, ou seja, sua posição começa a contar apartir do elemento 'pai' onde se encontra o código*/
+	overflow: auto;/*overflow é  utilizado quando o conteudo é maior do que o limite pre definido de seu elemento pai, neste caso usei o 'auto' para que ele adicione barras de rolagem para visualizar o conteudo que não coube no espaço em questão*/  
+}
+#content2 img{/*formatando o elemento img que se encontra dentro da div 'content2'*/
+	border: 1px solid #6d6d6d;/*defininfo uma borda para o elemento, informando sua expessura, seu estilo e sua cor*/
+	border-radius: 10px;/*arredondando as bordas*/
+	margin-top: 5px;/*definindo um tamanho de margem superior externa*/
+	margin-right: 7px;/*definindo uma valor de margem direita externa*/
+}
+#content2 h1{/*formatando o elemento h1 que esta dentro da div 'content2'*/
+	font-family: Impact, Helvetica, sans-serif;/*definindo a família de fontes do texto*/
+	color: #666;/*definindo uma cor para a fonte*/
+	text-align: center;/*centralizando o texto*/
+	padding: 3px;/*definindo um valor de margem interna(ou enchimento)*/
+}
+#content2 p{/*formatando o elemento p que esta dentro da div 'content2'*/
+	font: 18px Impact, Helvetica, sans-serif;/*definindo um tamanho para a fonte e sua família de fontes*/
+	color: #6d6d6d;/*definindo uma cor para a fonte*/
+
+}
+#content2 table{/*formatando o elemento table que esta dentro da div 'content2'*/
+	border: 2px solid #70ad47;/*definindo uma borda para o elemento onde informei sua expessura, seu estilo e sua cor*/
+	border-radius: 3px;/*arredondando a borda*/
+	margin: 0px auto;/*definindo uma margem externa*/
+}
+#content2 table tr img{/*formatando o elemento img que esta em uma linha(ou célula mais especificamente) da tabela que se encontra na div 'content2'*/
+	border: 0px;/*zerando a borda do elemento img*/
+}
+#content2 table tr{/*formatando as linhas do elemento table que esta dentro da div 'content2'*/
+	font: 15px Impact, Helvetica, sans-serif;/*definindo um tamanho para a fonte e sua família de fontes*/
+	border: 2px solid #70ad47;/*definindo uma borda para o elemento onde informei sua expessura, seu estilo e sua cor*/
+	text-align: center;/*centralizando o texto*/
+}
+#content2 table tr td{/*formatando as colunas dentro do elemento table que esta dentro da div 'content2'*/
+	border: 2px solid #70ad47;/*definindo uma borda para o elemento usando o modo compilado onde declaro primeiro sua expessura depois seu estilo e por último sua cor*/
+	padding: 5px;/*declarando uma margem interna(ou enchimento) para o elemento*/
+}

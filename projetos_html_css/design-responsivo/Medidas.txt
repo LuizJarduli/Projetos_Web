@@ -1,0 +1,17 @@
+Container – 1128px
+
+Logotipo – 234px x 36px 
+
+Menu – maximo 840px
+
+Banner – 1128px x 450px
+
+Caixa de texto – 480px
+
+Colunas de texto – 264px
+
+Fotos – 264px x 218px
+
+Margens – 24px
+
+Rodapé – 1128px
