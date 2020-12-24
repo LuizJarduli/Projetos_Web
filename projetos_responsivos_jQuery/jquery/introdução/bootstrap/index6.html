@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tecnologias para mobilidade</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("#div1").fadeToggle(); // efeito de desaparecer e aparecer
+				$("#div2").fadeToggle("slow"); // pode ser slow ou fast entre aspas
+				$("#div3").fadeToggle(3000); // tambem pode ser em milessegundos não precisa de aspas
+			});
+		});
+	</script>
+	<style type="text/css">
+		div{
+			width: 80px;
+			height: 80px;
+		}
+	</style>
+</head>
+<body style="margin: 20px">
+<button type="button" class="btn btn-outline-primary">Clique aqui</button><br><br>
+<div id="div1" style="background: #f00"></div><br/>
+<div id="div2" style="background: #0f0"></div><br/>
+<div id="div3" style="background: #00f"></div><br/>
+</body>
+</html>

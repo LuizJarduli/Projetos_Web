@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tecnologias para mobilidade</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".mostrar").click(function(){
+				$(".titulo").toggle("slow");
+			});
+			$("#p1").mouseenter(function(){
+				alert("Não era pra por o mouse em cima");
+			});
+		});
+	</script>
+</head>
+<body style="margin: 20px">
+<button type="button" class="btn btn-outline-info mostrar">Clique</button>
+<h1 class="titulo" style="display: none;">Hello, World!</h1><br/><br/>
+<p id="p1">Não coloque o mouse nesse parágrafo!!!</p>
+</body>
+</html>

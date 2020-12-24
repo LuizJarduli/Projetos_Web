@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('input[name=operacao]').change(function(){
+				var num1 = parseFloat($('#num1').val()); // converter os valores do input em números decimais
+				var num2 = parseFloat($('#num2').val()); 
+				var resultado = 0;
+
+				if ($(this).val() == 'Soma') {
+					resultado = num1 + num2;
+				} else if ($(this).val() == 'Sub') {
+					resultado = num1 - num2;
+				} else if ($(this).val() == 'multiplica') {
+					resultado = num1 * num2;
+				} else {
+					if (num2 == 0) {
+						alert("não é possível uma Divisão por zero");
+						resultado = "não existe";
+					} else {
+						resultado = num1 / num2;
+					}
+					
+				}
+				$('#resultado').text('Resultado: '+resultado);
+				$("#resultado").show();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Número 1:</span>
+			</div>
+			<input type="text" id="num1" class="form-control">
+		</div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Número 2:</span>
+			</div>
+			<input type="text" id="num2" class="form-control">
+		</div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text">
+					<input type="radio" name="operacao" value="Soma">
+				</div>
+			</div>
+			Soma
+		</div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text">
+					<input type="radio" name="operacao" value="Sub">
+				</div>
+			</div>
+			Subtração
+		</div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text">
+					<input type="radio" name="operacao" value="multiplica">
+				</div>
+			</div>
+			Multiplicação
+		</div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text">
+					<input type="radio" name="operacao" value="div">
+				</div>
+			</div>
+			Divisão
+		</div>
+		<div class="alert alert-success" id="resultado" style="display: none;">
+			
+		</div>
+	</div>
+</body>
+</html>

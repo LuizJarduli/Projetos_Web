@@ -1,0 +1,79 @@
+body{
+	font-family: 'Fjalla One', Arial, sans-serif;
+}
+#head{
+	margin: 5px;
+	width: 401px;
+}
+#conteudo{
+	width: 401px;
+	height: 300px;
+}
+#img{
+	margin: 1px;
+	border-radius: 5px;
+}
+#slogan{
+	background: #1C5C78;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #f6fefe;
+	font-size: 30px;
+}
+#iconSlogan{
+	color: #709BB4;
+	font-size: 80px;
+	text-shadow: none;
+	position: absolute;
+	transform: rotate(315deg);
+	margin-left: 30px;
+	margin-top: -42px;
+
+}
+.icon{
+	border-radius: 5px;
+	margin: 8px;
+	width: 400px;
+	height: 200px;
+}
+#recisao{
+	background-color: #00f;
+}
+#recisao p{
+	color: #f6fefe;
+	font-size: 30px;
+}
+#recisao p i{
+	color: #006;
+}
+.tileIcon{
+	margin-left: 160px;
+	margin-top: -40px;
+	transform: rotate(315deg);
+	font-size: 150px;
+	position: absolute;
+}
+#footer{
+	margin: 5px;
+}
+#recisaoForm{
+	background-color: #00f;
+	border-radius: 5px;
+	display: none;
+	width: 100%;
+	height: 90%;
+}
+#recisaoForm p, .form label{
+	color: #f6fefe;
+}
+.form{
+	width: 75%;
+	margin: 0px auto;
+}
+.sumiu{
+	display: none;
+}
+.ativa{
+	width: 400px;
+	height: 510px;
+}

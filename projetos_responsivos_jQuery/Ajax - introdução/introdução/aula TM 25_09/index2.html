@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tecnologias para mobilidade</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#btnsoma').click(function(){
+				var dados = $("#form").serialize();
+
+				//requisição AJAX
+				$.ajax({
+					// destinatário da requisição
+					url:"http://localhost/api/soma.php",
+					// método de envio dos dados
+					type: 'POST',
+					// quais dados serão enviados
+					data:dados+'&op=soma',
+					// tipo de dado
+					dataType:'text',
+					//  completada a requisição, o escopo abaixo será executado 
+					success:function(soma){
+						$('#resultado').text(soma);
+						$('#resultado').show();
+					} ,
+					// se houver algum erro na requisição, será executado o escopo abaixo
+					error:function(xhr){
+						alert("Erro de requisição: "+xhr.status+" "+xhr.statusText);
+					} 
+				});
+			});
+			$('#btnsub').click(function(){
+				var dados = $("#form").serialize();
+
+				//requisição AJAX
+				$.ajax({
+					// destinatário da requisição
+					url:"http://localhost/api/soma.php",
+					// método de envio dos dados
+					type: 'POST',
+					// quais dados serão enviados
+					data:dados+'&op=sub',
+					// tipo de dado
+					dataType:'text',
+					//  completada a requisição, o escopo abaixo será executado 
+					success:function(sub){
+						$('#resultado').text(sub);
+						$('#resultado').show();
+					} ,
+					// se houver algum erro na requisição, será executado o escopo abaixo
+					error:function(xhr){
+						alert("Erro de requisição: "+xhr.status+" "+xhr.statusText);
+					} 
+				});
+			});
+			$('#btndiv').click(function(){
+				var dados = $("#form").serialize();
+
+				//requisição AJAX
+				$.ajax({
+					// destinatário da requisição
+					url:"http://localhost/api/soma.php",
+					// método de envio dos dados
+					type: 'POST',
+					// quais dados serão enviados
+					data:dados+'&op=div',
+					// tipo de dado
+					dataType:'text',
+					//  completada a requisição, o escopo abaixo será executado 
+					success:function(div){
+						$('#resultado').text(div);
+						$('#resultado').show();
+					} ,
+					// se houver algum erro na requisição, será executado o escopo abaixo
+					error:function(xhr){
+						alert("Erro de requisição: "+xhr.status+" "+xhr.statusText);
+					} 
+				});
+			});
+			$('#btnmulti').click(function(){
+				var dados = $("#form").serialize();
+
+				//requisição AJAX
+				$.ajax({
+					// destinatário da requisição
+					url:"http://localhost/api/soma.php",
+					// método de envio dos dados
+					type: 'POST',
+					// quais dados serão enviados
+					data:dados+'&op=multi',
+					// tipo de dado
+					dataType:'text',
+					//  completada a requisição, o escopo abaixo será executado 
+					success:function(multi){
+						$('#resultado').text(multi);
+						$('#resultado').show();
+					} ,
+					// se houver algum erro na requisição, será executado o escopo abaixo
+					error:function(xhr){
+						alert("Erro de requisição: "+xhr.status+" "+xhr.statusText);
+					} 
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="jumbotron">
+		<form id="form">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						Número 1:
+					</span>
+				</div>	
+				<input class="form-control" type="text" id="num1" name="num1">
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						Número 2:
+					</span>
+				</div>
+				<input class="form-control" type="text" id="num2" name="num2">	
+			</div>
+			<button type="button" class="btn btn-primary" id="btnsoma">Somar</button>
+			<button type="button" class="btn btn-primary" id="btnsub">Subtração</button>
+			<button type="button" class="btn btn-primary" id="btnmulti">Multiplicação</button>
+			<button type="button" class="btn btn-primary" id="btndiv">Divisão</button>
+			<div class="alert alert-primary mt-3" id="resultado" style="display: none;"></div>
+		</form>
+	</div>
+</body>
+</html>

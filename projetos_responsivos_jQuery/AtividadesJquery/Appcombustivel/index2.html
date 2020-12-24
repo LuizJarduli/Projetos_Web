@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>App combustível</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			var opcao = $('input[name=opcao]:checked').val();
+			if (opcao == 's') {
+				$('#qtd').slideToggle()
+			}
+		});
+	</script>
+</head>
+<body style="font-family: Impact, Verdana, sans-serif;color: #ff0;background: #ff0;">
+<div class="jumbotron text-center" id="nav">
+	<nav class="navbar navbar-expand-sm" style="background: #69b;border: 1px solid #fff;border-radius: 5px">
+		<h3>Cálculo de<br>Seguro Desemprego</h3>
+		<br/>
+		<div class="container text-center" style="margin: 10px;">
+			<p>Preencha as informações abaixo para que o aplicativo determine número de parcelas e o valor delas</p>
+		</div>
+	</nav>
+</div>
+<div class="jumbotron text-center" id="conteudo" style="background: #69b;">
+	<form class="form-group" style="margin: 0px 17px;">
+		<label>Informe os seus três ultimos salários</label>
+		<div class="form-label-group" style="width: 30%;margin: 0px auto">
+			<input type="number" name="salario1" id="salario1" class="form-control" autofocus placeholder="1º salário">
+			<input type="number" name="salario2" id="salario2" class="form-control" placeholder="2º salário">
+			<input type="number" name="salario3" id="salario3" class="form-control" placeholder="3º salário">
+		</div>
+		<br/>
+		<div class="form-label-group">
+			<label>Quantidade de meses trabalhados</label>
+			<input type="text" name="mes" id="mes" class="form-control" placeholder="QTD de meses">
+		</div>
+		<br/>
+		<div class="form-label-group">
+			<label>recebeu seguro desemprego nos últimos 16 meses?</label>
+			<input type="radio" name="opcao" id="opcao" value="s"> Sim &nbsp;&nbsp;
+			<input type="radio" name="opcao" id="opcao" value="n"> Nao &nbsp;&nbsp;
+			<input type="text" class="form-control" name="qtd" id="qtd" placeholder="Qtd de vezes que recebeu" style="margin: 5px 0px;display: none;">
+			<br>
+		</div>
+		<button type="button" class="btn btn-outline-light" id="calcular">Calcular <i class="fas fa-calculator"></i></button>
+	</form>
+	<br/>
+</div>
+<div class="jumbotron text-center" id="resultado" style="display: none;">
+		<h3 id="resposta"></h3>
+	</div>
+<div id="footer"></div>
+</body>
+</html>

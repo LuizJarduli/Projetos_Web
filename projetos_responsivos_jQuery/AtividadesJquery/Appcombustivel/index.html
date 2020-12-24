@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>App combustível</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#calcular").click(function(){
+				$('#resultado').show();
+				var Pgasolina = $('#Pgasolina').val();
+				var Palcool = $('#Palcool').val();
+				var resultado = Palcool / Pgasolina;
+				if (resultado < 0.7) {
+					$('#resposta').text("Abasteça com Alcool");
+					
+				} else {
+					
+					$('#resposta').text("Abasteça com Gasolina");
+					
+				}
+			});
+		});
+	</script>
+</head>
+<body style="font-family: Impact, Verdana, sans-serif;color: #c5614f">
+<div class="jumbotron text-center" id="nav">
+	<nav class="navbar navbar-expand-sm" style="background: #cccccc;border: 1px solid #fff;border-radius: 5px">
+		<h3>Álcool ou combustível?</h3>
+		<br/>
+		<div class="container text-center" style="margin: 10px;">
+			<p>Preencha as informações abaixo para que o aplicativo determine qual combustivel esta compensando com base nos seus respectivos preços!</p>
+		</div>
+	</nav>
+</div>
+<div class="jumbotron-fluid text-center" id="conteudo">
+	<form class="form-group" style="margin: 0px 17px;">
+		<div class="form-label-group">
+			<input type="number" name="Pgasolina" id="Pgasolina" class="form-control" autofocus placeholder="Informe o valor do litro de Gasolina:">
+		</div>
+		<div class="form-label-group">
+			<input type="number" name="Palcool" id="Palcool" class="form-control" placeholder="Informe o valor do litro de Alcool:">
+		</div>
+		<br/>
+		<button type="button" class="btn btn-outline-primary" id="calcular">Calcular <i class="fas fa-calculator"></i></button>
+	</form>
+	<br/>
+</div>
+<div class="jumbotron text-center" id="resultado">
+		<h3 id="resposta"></h3>
+	</div>
+<div id="footer"></div>
+</body>
+</html>

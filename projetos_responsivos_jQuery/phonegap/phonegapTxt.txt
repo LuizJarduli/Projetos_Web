@@ -1,0 +1,5 @@
+phonegap = cmd comandos
+
+phonegap create<comando para criar projetos> cameraPlugin<nome do projeto>
+phonegap serv = emula um servidor para seu dispositivo, use ctrl + c para interromper o serviço
+phonegap platform add ou rm browser = gera os arquivos necessários para transformar o projeto em apk

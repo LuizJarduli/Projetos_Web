@@ -1,0 +1,244 @@
+/* Navigation **************************************************/
+.navbar {top: 0px;position: fixed;z-index:4;width: 100%;margin-bottom: 0;height: 45px;min-height: 45px;}
+
+.navbar .navbar-header { 
+width: 100%;
+height: 45px;
+min-height: 45px;
+position: fixed;
+top:0px;
+right: 0px;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+
+.navbar .navbar-header .toggle-menu {
+top: 0;
+right: 0;
+position: fixed;
+cursor: pointer;
+padding: 12px 15px;    
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out; 
+}
+
+.navbar .navbar-header .toggle-menu .icon-bar {
+height: 4px;
+display: block;
+width: 30px;
+opacity: 1;
+background: #FFF;
+margin-bottom: 4px;
+-webkit-transition: all 0.8s ease-in-out;
+-moz-transition: all 0.8s ease-in-out;
+transition: all 0.8s ease-in-out;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;}
+
+
+.navbar .navbar-header .toggle-menu .icon-bar:last-child {margin-bottom: 0; }
+.navbar .navbar-header .toggle-menu .icon-bar.hide-closed {transition-duration: 0.4s;}
+.navbar .navbar-header .toggle-menu.active {right: 0px;height: 10px;padding-top: 17px; }
+.navbar .navbar-header .toggle-menu.active .icon-bar {margin-bottom: -4px; background:#CCC; }
+#menuText {top: 0;right: 80px;position: fixed;padding: 10px 20px 20px 20px;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out; display:none;}
+#menuText #menuOpen {opacity: 0;display: none;}
+#menuText h5 {font-weight: 300;letter-spacing: 0.05em; }
+#menuText.closed {right: 90px; }
+#menuText.closed h5#menuClosed {opacity: 0;display: none;}
+#menuText.closed h5#menuOpen {opacity: 1;display: inline-block; }
+/*#menuText {display: none; }*/
+.navbar .header-login {padding: 7px 30px;margin: 5px 0px;z-index:5;width:auto;float:left;}
+.navbar .header-login #lblLog{ outline: none;color: #f0f0f0; text-shadow: -1px -1px 1px #222;max-width:93%; }
+
+.navbar .header-title {
+
+padding: 10px 30px;
+z-index:5;
+width:30px;
+width:400px;
+color: #FFF;
+text-align:center;
+text-decoration: none; 
+font-weight: normal;
+letter-spacing: 0.9px;
+}
+.navbar .header-title #lblCaption{ font-size:26px;}
+
+.navbar .header-search {top: 0;right: 62px;position:absolute; /*position:fixed ; */padding: 5px 0px;z-index:5;}
+.navbar .header-search input#txtSearch {z-index: 5;outline: none;padding: 3px 3px 3px 3px;margin: 0px 0px;border-radius: 5px;-moz-border-radius:5px;-webkit-border-radius:5px;font-style:italic;font-size:14px;color:#555;
+                                        width: 20px;height: 25px;cursor:pointer;transition: width 700ms,background 700ms;-webkit-transition: width 700ms,background 700ms;-moz-transition: width 700ms,background 700ms;-ms-transition: width 700ms,background 700ms;-o-transition: width 700ms,background 700ms;
+                                        border:0px solid #FFF; 
+                                        background: transparent url('../img/search/search-left.png') left center no-repeat;}
+.navbar .header-search input#txtSearch:focus {background-color: #e1f0f3;width: 250px;border: 0;outline: none;padding: 3px 0px 3px 32px;margin: 2px 0px;font-style: italic;font-size: 14px;border: 0px solid #ccc;color: #555;background: #FFF url('../img/search/search-right.png') left 3px center no-repeat;}
+
+.navbar .header-search #txtSearch {/*display: none;*/}
+
+.navbar .header-search input#txtSearch::-webkit-input-placeholder{color:transparent;-webkit-transition:color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);transition:color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)}
+.navbar .header-search input#txtSearch::-moz-placeholder{color:transparent;transition:color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)}
+.navbar .header-search input#txtSearch:-moz-placeholder{color:transparent;transition:color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)}
+.navbar .header-search input#txtSearch:-ms-input-placeholder{color:transparent}
+
+/* Place Holder CSS for Focus */
+.navbar .header-search input#txtSearch:focus::-webkit-input-placeholder {opacity: 0.75;color:#444;}
+.navbar .header-search input#txtSearch:focus::-moz-placeholder {opacity: 0.75;color:#444;}
+.navbar .header-search input#txtSearch:focus:-moz-placeholder {opacity: 0.75;color:#444;}
+.navbar .header-search input#txtSearch:focus:-ms-input-placeholder{opacity: 0.75;color:#444;}
+
+.navbar .header-search input#txtSearch:hover::-moz-placeholder {opacity: 0.75;color:#444;}
+.navbar .header-search input#txtSearch:hover::-moz-placeholder {opacity: 0.75;color:#444;}
+.navbar .header-search input#txtSearch:hover:-moz-placeholder {opacity: 0.75;color:#444;}
+.navbar .header-search input#txtSearch:hover:-ms-input-placeholder {opacity: 0.75;color:#444;}
+
+
+  /* General styles for all menus */
+.cbp-spmenu {
+  position: fixed;
+  /*background: #333436;
+  background: rgba(9,9,9,.7);
+  background: rgba(0,0,0,.2);*/
+  background:#F2F2F2;
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+}
+
+.cbp-spmenu ul { list-style: none; height: auto;padding:0px; 
+                 padding-top:60px; }
+.cbp-spmenu ul li { display: block;}
+.cbp-spmenu ul li a { position: relative; display: block; padding: 14px 11px 14px 20px;
+text-decoration: none; 
+color: #666; 
+font-weight: normal;
+font-size:17px;
+letter-spacing: 0.5px;
+}
+
+.cbp-spmenu ul li a b{font-size:13px;}
+.cbp-spmenu ul li a p{font-size:15px;}
+
+/*.cbp-spmenu ul li b{color: #0066FF;}*/
+
+
+.cbp-spmenu ul li:hover{background:#0088CC; /*background: rgba(3,3,3,.3);*/ }
+.cbp-spmenu ul li a:hover { color:#FFF;/*color:#FF0;    color: #cad0e6; */  text-decoration: none; }
+
+/*.cbp-spmenu ul li a::after {
+	content: '';
+	display: block;
+	width: 6px;
+	height: 6px;
+	border-right: 3px solid #CCC;
+	border-top: 3px solid rgba(102, 102, 102, 0.72);
+	position: absolute;
+	right: 30px;
+	top: 45%;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.cbp-spmenu ul li a:hover::after { border-color: #FFF; }*/
+
+
+
+/* Orientation-dependent styles for the content of the menu */
+.cbp-spmenu-vertical {
+  width: 375px;
+  height: 100%;
+  /*top:60px;*/
+  z-index: 3;
+  top:0px;
+  /*border:1px solid #FF0;*/
+}
+
+.cbp-spmenu-vertical a- {
+  border-bottom: 1px solid #258ecd;
+  padding: 1em; }
+
+.cbp-spmenu-horizontal {
+  width: 100%;
+  height: 150px;
+  left: 0;
+  z-index: 1000;
+  overflow: auto; }
+
+.cbp-spmenu-horizontal h3 {
+  height: 100%;
+  width: 20%;
+  float: left; }
+
+.cbp-spmenu-horizontal a- {
+  float: left;
+  width: 20%;
+  padding: 0.8em;
+  border-left: 1px solid #258ecd; }
+
+/* Vertical menu that slides from the left or right */
+.cbp-spmenu-left {
+  left: -400px; }
+
+.cbp-spmenu-right {
+  right: -400px; }
+
+.cbp-spmenu-left.cbp-spmenu-open {
+  left: 0px; }
+
+.cbp-spmenu-right.cbp-spmenu-open {
+  right: 0px; }
+
+/* Horizontal menu that slides from the top or bottom */
+.cbp-spmenu-top {
+  top: -150px; }
+
+.cbp-spmenu-bottom {
+  bottom: -150px; }
+
+.cbp-spmenu-top.cbp-spmenu-open {
+  top: 0px; }
+
+.cbp-spmenu-bottom.cbp-spmenu-open {
+  bottom: 0px; }
+
+/* Push classes applied to the body */
+.cbp-spmenu-push {
+  overflow-x: auto;
+  position: relative;
+  left: 0; }
+
+.cbp-spmenu-push-toright {
+  left: 400px; }
+
+.cbp-spmenu-push-toleft {
+  left: -400px; }
+
+/* Transitions */
+.cbp-spmenu,
+.cbp-spmenu-push {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+
+  /********* Close ************/
+.active .skew-clock {
+  -ms-transform: rotate(40deg);
+  /* IE 9 */
+  -webkit-transform: rotate(40deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(40deg); }
+.active .hide-closed {
+  opacity: 0 !important;
+  transition-delay: 0.4s;
+  transition-duration: 0.4s; }
+.active .skew-counter {
+  -ms-transform: rotate(-40deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-40deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-40deg); }
+
+/* End Navigation **************************************************/

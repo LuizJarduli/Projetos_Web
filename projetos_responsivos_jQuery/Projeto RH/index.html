@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projeto TM</title>
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+		// quando a pagina for carregada, tudo o que estiver no escopo abaixo será executado imediatamente
+		$(document).ready(function(){
+			// a função abaixo só será ativada quando o usuário clicar no elemento
+			$('#recisao p').click(function(){
+				//adicionando classe
+				$('#recisao p').addClass('sumiu');
+				$('#recisao').addClass('ativa');
+				// slideDown é um recurso visual do efeito hide/show com jquery
+				$('#recisaoForm').slideDown("fast");
+				$('#footer').addClass('sumiu');
+				// o evento abaixo para 'fechar' a ação e reverter o clique da função do elemento acima
+				$('#fechar').click(function(){
+					$('#recisaoForm').hide();
+					$('#recisao').removeClass('ativa');
+					$('#recisao p').removeClass('sumiu');
+					$('#footer').removeClass('sumiu');
+				});
+			});
+			// evento clique do botão calcular
+			$("#calcular").click(function(){
+				// criando objeto do tipo DATE para que posso manipular as entradas de datas do usuários
+				var datas = new Date($("#datasaida").val());
+				// pegando o dia do dado de entrada
+				var dias = datas.getDate();
+				// pegando o mês do dado de entrada
+				var mess = datas.getMonth();
+				//pegando o ano do dado de entrada
+				var anos = datas.getFullYear();
+				//instanciando outro objeto do tipo DATE
+				var datac = new Date($("#datacontratacao").val());
+				var diac = datac.getDate();
+				var mesc = datac.getMonth();
+				var anoc = datac.getFullYear();
+				//tranformando o valor do input em um decimal
+				var salario = parseFloat($("#salarioBruto").val());
+				//pegando valores de um select
+				var motivo = $("#motivorec").val();
+				//pegando valores de outro select
+				var feriasV = $("#feriasV").val();
+				// estrutura de decisão if
+				if (motivo == "3" && feriasV == "1") {
+					// calculo de fgts sobre o salário
+					var fgts = salario * 0.08;
+					//declarando variável tempo e multa e zerando-as
+					var tempo = 0;
+					var multa = 0;
+					if (anoc == anos) {
+						//caso o ano de saida e o ano de admissao forem os mesmos, será subtraido os meses para gerar um valor para 'tempo'
+						tempo = mess - mesc;
+						var tempoM = fgts * tempo;
+						// calculando a multa do fgts
+						multa = tempoM * 0.40;
+					} else {
+						//senão os anos de admissão e saída é que serão subtraidos
+						tempo = anos - anoc;
+						var aviso = tempo;
+						var tempoA = (tempo * 12 + (mess - mesc)) * fgts;
+						multa = tempoA * 0.40;
+					}
+					//calculando o saldo salarial do mes da rescisão
+					var saldosal = (salario / 30) * (dias-1);
+					//iniciando a variavel responsavel pelo aviso com 30
+					var avisoP = 30;
+					if (aviso > 1 ) {
+						//se aviso for maior que 1,no caso 1 seria o ano trabalhado, o aviso previo será incrementado em tres dias
+						for (var i = 1; i <=aviso; i++) {
+							avisoP = avisoP+3;
+						}
+					}
+					//calculo para gerar o valor indenizado ao funcionário pelo aviso prévio
+					var avisoPtotal = (salario / 30) * avisoP;
+					// calculo do decimo terceiro proporcional ao dias trabalhados do mes da recisão
+					var decimoP = salario * (1 / 12);
+					// calculando o indice que dirá quanto o trabalhador receberá pelos dias amais de aviso prévio em seu 13º terceiro
+					var calculodeInd = avisoP / 30;
+					// calculo para descobrir o decimo terceiro indenizado
+					var decimoInd = (salario * (Math.round(calculodeInd) / 12));
+					//calculando as ferias proporcionais aos dias trabalhados no dia da recisão
+					var feriasP = salario * (1 / 12);
+					//calculo das ferias indenizadas
+					var feriasInd = (salario * (Math.round(calculodeInd) / 12));
+					//caso o funcionário tinha ferias vencidas, será acrescentado ao montante
+					var feriasVencidas = salario * (12 / 12);
+					//terço de férias
+					var feriasTerco = salario * (1 / 3);
+					//descontando o inss do saldo salarial
+					var inssSal = saldosal * 0.08;
+					//deconstando o inss do 13º terceiro(proporcional e indenizado)
+					var inssdecimo = (decimoP + decimoInd) * 0.08;
+					//gerando o total bruto da rescisão
+					var totalBruto = saldosal + avisoPtotal + decimoP + decimoInd + feriasP + feriasInd + feriasVencidas + feriasTerco;
+					//gerando o total liquido
+					var totalLiq = totalBruto - (inssSal + inssdecimo);
+					//gerando um alerta para exibir os resultados
+					alert("Saldo salarial: "+saldosal.toFixed(2)+"\nAviso Prévio: "+avisoP+" dias & R$ "+avisoPtotal.toFixed(2)+"\n13º Proporcional: "+decimoP.toFixed(2)+"\n13º Indenizado: "+decimoInd.toFixed(2)+"\nFérias Proporcionais: "+feriasP.toFixed(2)+"\nFérias Indenizadas: "+feriasInd.toFixed(2)+"\nFérias vencidas: "+feriasVencidas.toFixed(2)+"\nTerço de férias: "+feriasTerco.toFixed(2)+"\n\nINSS Salário 8%: "+inssSal.toFixed(2)+"\nINSS 13º terceiro: "+inssdecimo.toFixed(2)+"\n\nTotal de vencimentos: "+totalBruto.toFixed(2)+"\nValor Total líquido da rescisão: "+totalLiq.toFixed(2)+"\n\nMulta aplicada sobre 40% FGTS: "+multa.toFixed(2));
+
+				} else if (motivo == "3" && feriasV == "2") {
+					// caso a sentença acima seja falsa
+					var fgts = salario * 0.08;
+					var tempo = 0;
+					var multa = 0;
+					if (anoc == anos) {
+						tempo = mess - mesc;
+						var tempoM = fgts * tempo;
+						multa = tempoM * 0.40;
+					} else {
+						tempo = anos - anoc;
+						var aviso = tempo;
+						var tempoA = (tempo * 12 + (mess - mesc)) * fgts;
+						multa = tempoA * 0.40;
+					}
+					var saldosal = (salario / 30) * (dias-1);
+					var avisoP = 30;
+					if (aviso > 1 ) {
+						for (var i = 1; i <=aviso; i++) {
+							avisoP = avisoP+3;
+						}
+					}
+					var avisoPtotal = (salario / 30) * avisoP;
+					var decimoP = salario * (1 / 12);
+					var calculodeInd = avisoP / 30;
+					var decimoInd = (salario * (Math.round(calculodeInd) / 12));
+					var feriasP = salario * (1 / 12);
+					var feriasInd = (salario * (Math.round(calculodeInd) / 12));
+					var feriasTerco = salario * (1 / 3);
+					var inssSal = saldosal * 0.08;
+					var inssdecimo = (decimoP + decimoInd) * 0.08;
+					var totalBruto = saldosal + avisoPtotal + decimoP + decimoInd + feriasP + feriasInd + feriasTerco;
+					var totalLiq = totalBruto - (inssSal + inssdecimo);
+					alert("Saldo salarial: "+saldosal.toFixed(2)+"\nAviso Prévio: "+avisoP+" dias & R$ "+avisoPtotal.toFixed(2)+"\n13º Proporcional: "+decimoP.toFixed(2)+"\n13º Indenizado: "+decimoInd.toFixed(2)+"\nFérias Proporcionais: "+feriasP.toFixed(2)+"\nFérias Indenizadas: "+feriasInd.toFixed(2)+"\nTerço de férias: "+feriasTerco.toFixed(2)+"\n\nINSS Salário 8%: "+inssSal.toFixed(2)+"\nINSS 13º terceiro: "+inssdecimo.toFixed(2)+"\n\nTotal de vencimentos: "+totalBruto.toFixed(2)+"\nValor Total líquido da rescisão: "+totalLiq.toFixed(2)+"\n\nMulta aplicada sobre 40% FGTS: "+multa.toFixed(2));
+
+				} else if ((motivo == "2" || motivo == "1") && feriasV == "2") {
+					//caso a sentença acima tamem seja falsa
+					var tempo = 0;
+					if (anoc == anos) {
+						tempo = mess - mesc;
+					} else {
+						tempo = anos - anoc;
+						var aviso = tempo;
+					}
+					var saldosal = (salario / 30) * (dias-1);
+					var avisoP = 30;
+					if (aviso > 1 ) {
+						for (var i = 1; i <=aviso; i++) {
+							avisoP = avisoP+3;
+						}
+					}
+					var avisoPtotal = (salario / 30) * avisoP;
+					var decimoP = salario * (1 / 12);
+					var calculodeInd = avisoP / 30;
+					var decimoInd = (salario * (Math.round(calculodeInd) / 12));
+					var feriasP = salario * (1 / 12);
+					var feriasInd = (salario * (Math.round(calculodeInd) / 12));
+					var feriasTerco = salario * (1 / 3);
+					var inssSal = saldosal * 0.08;
+					var inssdecimo = (decimoP + decimoInd) * 0.08;
+					var totalBruto = saldosal + avisoPtotal + decimoP + decimoInd + feriasP + feriasInd + feriasTerco;
+					var totalLiq = totalBruto - (inssSal + inssdecimo);
+					alert("Saldo salarial: "+saldosal.toFixed(2)+"\nAviso Prévio: "+avisoP+" dias & R$ "+avisoPtotal.toFixed(2)+"\n13º Proporcional: "+decimoP.toFixed(2)+"\n13º Indenizado: "+decimoInd.toFixed(2)+"\nFérias Proporcionais: "+feriasP.toFixed(2)+"\nFérias Indenizadas: "+feriasInd.toFixed(2)+"\nTerço de férias: "+feriasTerco.toFixed(2)+"\n\nINSS Salário 8%: "+inssSal.toFixed(2)+"\nINSS 13º terceiro: "+inssdecimo.toFixed(2)+"\n\nTotal de vencimentos: "+totalBruto.toFixed(2)+"\nValor Total líquido da rescisão: "+totalLiq.toFixed(2));
+
+				} else {
+					//caso todas as sentenças sejam falsas
+					var tempo = 0;
+					if (anoc == anos) {
+						tempo = mess - mesc;
+					} else {
+						tempo = anos - anoc;
+						var aviso = tempo;
+					}
+					var saldosal = (salario / 30) * (dias-1);
+					var avisoP = 30;
+					if (aviso > 1 ) {
+						for (var i = 1; i <=aviso; i++) {
+							avisoP = avisoP+3;
+						}
+					}
+					var avisoPtotal = (salario / 30) * avisoP;
+					var decimoP = salario * (1 / 12);
+					var calculodeInd = avisoP / 30;
+					var decimoInd = (salario * (Math.round(calculodeInd) / 12));
+					var feriasP = salario * (1 / 12);
+					var feriasInd = (salario * (Math.round(calculodeInd) / 12));
+					var feriasVencidas = salario * (12 / 12);
+					var feriasTerco = salario * (1 / 3);
+					var inssSal = saldosal * 0.08;
+					var inssdecimo = (decimoP + decimoInd) * 0.08;
+					var totalBruto = saldosal + avisoPtotal + decimoP + decimoInd + feriasP + feriasInd + feriasVencidas + feriasTerco;
+					var totalLiq = totalBruto - (inssSal + inssdecimo);
+					alert("Saldo salarial: "+saldosal.toFixed(2)+"\nAviso Prévio: "+avisoP+" dias & R$ "+avisoPtotal.toFixed(2)+"\n13º Proporcional: "+decimoP.toFixed(2)+"\n13º Indenizado: "+decimoInd.toFixed(2)+"\nFérias Proporcionais: "+feriasP.toFixed(2)+"\nFérias Indenizadas: "+feriasInd.toFixed(2)+"\nFérias vencidas: "+feriasVencidas.toFixed(2)+"\nTerço de férias: "+feriasTerco.toFixed(2)+"\n\nINSS Salário 8%: "+inssSal.toFixed(2)+"\nINSS 13º terceiro: "+inssdecimo.toFixed(2)+"\n\nTotal de vencimentos: "+totalBruto.toFixed(2)+"\nValor Total líquido da rescisão: "+totalLiq.toFixed(2));
+				}	
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="jumbotron-fluid text-center" id="head">
+		<div id="banner">
+			<div id="slogan">
+				<p>APP Recursos<br/> humanos <i class="fas fa-briefcase" id="iconSlogan"></i></p>
+			</div>
+			<img src="img/banner.jpg"  id='img' alt="Banner" width="100%" height="100%">
+		</div>
+	</div>
+	<div id="conteudo">
+		<div class="jumbotron-fluid icon" id="recisao">
+			<p class="p-3" align="left">Cálculo <br>de <i class="fas fa-piggy-bank tileIcon"></i> <br>Recisão</p>
+			<div class="form-group" id="recisaoForm">
+				<form class="text-center form">
+					<i class="fas fa-window-close" style="margin-left: 324px;color: #f6fefe;" id="fechar"></i>
+					<p class="p-3">Cálculo de recisão</p>
+					<br>
+					<input type="number" class="form-control" name="salarioBruto" id="salarioBruto" placeholder="Salário Bruto"><br>
+					<label for="datacontratacao">Data de contratacao</label>
+					<input type="date" class="form-control" name="datacontratacao" id="datacontratacao"><br>
+					<label for="datasaida">Data de saída</label>
+					<input type="date" class="form-control" name="datasaida" id="datasaida"><br>
+					<label for="motivorec">Motivo da recisao</label>
+					<select name="motivorec" id="motivorec" class="form-control">
+						<option value="1" selected>Pedido de demissão</option>
+						<option value="2">Dispensa por justa causa</option>
+						<option value="3">Dispensa sem justa causa</option>
+					</select> <br>
+					<label for="feriasV">Férias vencidas</label>
+					<select name="feriasV" id="feriasV" class="form-control">
+						<option value="1" selected>Sim</option>
+						<option value="2">Não</option>
+					</select>
+					<button type="button" id="calcular" class="btn btn-success" style="margin: 5px;">Calcular</button>
+				</form>	
+			</div>
+		</div>
+	</div>
+	<div id="footer" class="jumbotron text-center">
+		<p class="p-5">APP-RH Luiz Miguel Jarduli Leite ©, todos os direitos reservados</p>
+	</div>
+</body>
+</html>
