@@ -1,4 +1,4 @@
-# Projetos Reponsivos desenvolvidos durante o curso técnico de informática.
+# Projetos Responsivos desenvolvidos durante o curso técnico de informática.
 
 ### Projetos foram desenvolvidos usando jQuery, CSS3, HTML5 e Bootstrap4. 
 
