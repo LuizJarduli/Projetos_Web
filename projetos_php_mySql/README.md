@@ -10,5 +10,5 @@ ExerciciosEdmodo | Uma lista de exercícios avaliativos desenvolvidos para a dis
 Materiais | Conjunto de materiais de apoio para a disciplina, possui desde o básico do PHP até geração de COOKIES.
 PDO | Exercícios práticos sobre PDO, que busca criar toda a conexão e CRUD com o banco de dados via orientação à objetos.
 Recortando Imagens | Projeto prático usando o plugin _Croopie_ (<https://foliotek.github.io/Croppie/>), que recorta imagens que foram subidas pelo usuário.
-TrabalhoPC | Trabalho Avaliativo desenvolvido na disciplina. É um website de cadastro de carrinhos _Hot Wheels_
-TrabalhoPC_2 | Trabalho Avaliativo desenvolvido para a disciplina. É um website que registra pedidos de uma lanchonete (chamada LanchoNET, ba-dum-tsss), e possui CRUD completo para o ADMIN e seus produtos registrados.
+TrabalhoPC | Trabalho Avaliativo desenvolvido para a disciplina. É um website de cadastro de carrinhos _Hot Wheels_
+TrabalhoPC_2 | Segundo Trabalho Avaliativo desenvolvido para a disciplina. É um website que registra pedidos de uma lanchonete (chamada LanchoNET, ba-dum-tsss), e possui CRUD completo para o ADMIN e seus produtos registrados.
